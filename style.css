@@ -1,0 +1,131 @@
+body {
+    background: radial-gradient(circle, 
+        #03045e, /* Azul profundo */
+        #240046, /* Roxo escuro */
+        #5b0060, /* Magenta escuro */
+        #800080, /* Roxo */
+        #bb377d, /* Rosa escuro */
+        #e56b6f, /* Vermelho rosado */
+        #ff7b00, /* Laranja */
+        #ffd700); /* Dourado */
+    background-size: 400% 400%; /* Aumenta o tamanho para permitir a animação */
+    animation: galaxyAnimation 20s ease infinite; /* Adiciona a animação */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+@keyframes galaxyAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    background-color: #000;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    max-width: 95%;
+    box-sizing: border-box;
+}
+
+.profile-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    margin-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.social-links a img {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+}
+
+.social-button {
+    background-color: #555;
+    padding: 12px 24px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.social-button:hover {
+    background-color: #666;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.link-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 800px;
+        padding: 30px;
+    }
+
+    .social-links {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .social-links a {
+        margin-right: 20px;
+        margin-bottom: 0;
+        width: auto;
+    }
+
+    .social-button {
+        width: auto;
+        padding: 10px 20px;
+    }
+}
+
+.social-button:focus {
+    outline: 2px solid #0078d7;
+    outline-offset: 2px;
+}
