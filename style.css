@@ -1,20 +1,21 @@
 body {
     background: radial-gradient(circle, 
-        #03045e, /* Azul profundo */
-        #240046, /* Roxo escuro */
-        #5b0060, /* Magenta escuro */
-        #800080, /* Roxo */
-        #bb377d, /* Rosa escuro */
-        #e56b6f, /* Vermelho rosado */
-        #ff7b00, /* Laranja */
-        #ffd700); /* Dourado */
-    background-size: 400% 400%; /* Aumenta o tamanho para permitir a animação */
-    animation: galaxyAnimation 20s ease infinite; /* Adiciona a animação */
+        #03045e,
+        #240046,
+        #5b0060,
+        #800080,
+        #bb377d,
+        #e56b6f,
+        #ff7b00,
+        #ffd700);
+    background-size: 400% 400%;
+    animation: galaxyAnimation 30s ease infinite;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    font-family: 'Inter', sans-serif;
 }
 
 @keyframes galaxyAnimation {
@@ -37,6 +38,7 @@ body {
     color: white;
     max-width: 95%;
     box-sizing: border-box;
+    margin: 0 auto; /* Adicionado para centralizar o container horizontalmente */
 }
 
 .profile-image-container {
@@ -51,6 +53,27 @@ body {
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 25px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .social-links {
@@ -78,28 +101,58 @@ body {
 }
 
 .social-button {
-    background-color: #555;
-    padding: 12px 24px;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    background: linear-gradient(135deg, #4361ee 0%, #80ed99 100%);
+    padding: 15px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     display: flex;
     align-items: center;
-    width: 100%;
     justify-content: center;
+    width: 100%;
     box-sizing: border-box;
+    border: none;
+    transition: background-color 0.3s ease;
 }
 
 .social-button:hover {
-    background-color: #666;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #4361ee 0%, #80ed99 100%);
+}
+
+.social-button:active {
+    transform: translateY(0) scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .link-text {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.linkedin:hover {
+    background: linear-gradient(135deg, #0077b5 0%, #0077b5 100%);
+}
+
+.github:hover {
+    background: linear-gradient(135deg, #333333 0%, #333333 100%);
+}
+
+.instagram:hover {
+    background: linear-gradient(135deg, #e4405f 0%, #c32aa3 100%);
+}
+
+.telegram:hover {
+    background: linear-gradient(135deg, #229ED9 0%, #229ED9 100%);
+}
+
+.email:hover {
+    background: linear-gradient(135deg, #b8b8b8 0%, #9b9999 100%);
+    color: #000;
 }
 
 @media (min-width: 768px) {
