@@ -1,0 +1,644 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "collapsed_sections": [
+        "WD8gQC5T8yPr",
+        "NqG-CDfQAjZV",
+        "AVwDqs6oC6os",
+        "z1KytIHDEHir",
+        "xe0tFtkxHAhc",
+        "S3W_PNnzI_d0",
+        "tByxG2zBg6_C",
+        "Wwlk4Lx13JoO",
+        "wYGiGRbshRc1",
+        "VltStnKpdLSp"
+      ],
+      "authorship_tag": "ABX9TyMrKqjL2DJnJ4o84rgVAtvu"
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# Exercícios de Aula Comandos de Entrada e Saída em Python"
+      ],
+      "metadata": {
+        "id": "DcMVU2c38kcy"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "### 1 - Faça em Python um algoritmo que leia um número inteiro qualquer. O algoritmo deve calcular e escrever o quadrado, a raiz quadrada, e a divisão do quadrado pela raiz quadrada do número lido.\n"
+      ],
+      "metadata": {
+        "id": "WD8gQC5T8yPr"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Algoritmo de cáculo quadrado, raiz quadrada e divisão do quadrado pela raiz quadrada\n",
+        "\n",
+        "#bibliotecas\n",
+        "import math\n",
+        "\n",
+        "#var\n",
+        "n = 0\n",
+        "qua = 0\n",
+        "rq = 0.0\n",
+        "\n",
+        "n = int(input('Informe um número inteiro qualquer: '))\n",
+        "qua = n ** 2\n",
+        "print(\"O quadrado de\" , n,\"é:\" ,qua)\n",
+        "\n",
+        "rq = math.sqrt(n)\n",
+        "print(\"A raiz quadrada de\", n, \"é:\", rq)\n",
+        "\n",
+        "# Verificar se a raiz quadrada é zero para evitar divisão por zero\n",
+        "if rq != 0:\n",
+        "  div_qua_ra = qua / rq\n",
+        "  print(\"A divisão de\", qua, \"por\", rq, \"é:\", div_qua_ra)\n",
+        "else:\n",
+        "  print(\"Não é possível dividir por zero.\")\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "OfEMIhww87HD",
+        "outputId": "694db0a5-237d-45fd-bd4a-9603984f4389"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Informe um número inteiro qualquer: 0\n",
+            "O quadrado de 0 é: 0\n",
+            "A raiz quadrada de 0 é: 0.0\n",
+            "Não é possível dividir por zero.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "### 2 - Faça em Python um algoritmo que calcule e escreva o preço final de um computador, sendo fornecido o preço de fábrica. O preço final do computador é calculado com base nos adicionais de: 30 % de imposto e 10 % de revenda sobre o preço de fábrica."
+      ],
+      "metadata": {
+        "id": "NqG-CDfQAjZV"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#const\n",
+        "imposto = 0.30\n",
+        "revenda = 0.10\n",
+        "\n",
+        "#var\n",
+        "preco_fabrica = 0.0\n",
+        "preco_final = 0.0\n",
+        "\n",
+        "preco_fabrica = float(input('Informe o preço de fábrica do computador: '))\n",
+        "preco_final = preco_fabrica * (1 + imposto + revenda)\n",
+        "print(\"O preço final do computador é:\", round(preco_final, 2))\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "8Ghe1SLhAw7b",
+        "outputId": "9d704752-6e92-4b07-a438-41db508d3419"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Informe o preço de fábrica do computador: 1234.78\n",
+            "O preço final do computador é: 1728.69\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "### 3 - Faça um algoritmo em Python que leia três números inteiros e calcule a sua média. Ao final, o algoritmo deve escrever os números lidos e o resultado da média."
+      ],
+      "metadata": {
+        "id": "AVwDqs6oC6os"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#var\n",
+        "n1 = 0\n",
+        "n2 = 0\n",
+        "n3 = 0\n",
+        "media = 0.0\n",
+        "\n",
+        "n1 = int(input('Informe o primeiro número: '))\n",
+        "n2 = int(input('Informe o segundo número: '))\n",
+        "n3 = int(input('Informe o terceiro número: '))\n",
+        "media = (n1 + n2 + n3) / 3\n",
+        "print(\"Os números informados foram:\", n1, \",\", n2, \"e\", n3,)\n",
+        "print(\"A média dos números é:\", media)\n",
+        "\n",
+        "#"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "QYRP3PbFDEEq",
+        "outputId": "3bdc3165-8553-486c-efd9-a19950ec36cd"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Informe o primeiro número: 5\n",
+            "Informe o segundo número: 4\n",
+            "Informe o terceiro número: 3\n",
+            "Os números informados foram: 5 , 4 e 3\n",
+            "A média dos números é: 4.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "### 4 - Fazer um algoritmo em Python que calcule o número de litros de combustível gastos em uma viagem, sabendo-se que o carro faz 12 km com um litro. Deverão ser lidos o tempo gasto na viagem e a velocidade média. Aplicar as seguintes fórmulas:"
+      ],
+      "metadata": {
+        "id": "z1KytIHDEHir"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#const\n",
+        "km_L = 12\n",
+        "\n",
+        "#var\n",
+        "tempo = 0.0\n",
+        "velocidade = 0.0\n",
+        "litros = 0.0\n",
+        "\n",
+        "tempo = float(input('Informe o tempo gasto na viagem em horas: '))\n",
+        "velocidade = float(input('Informe a velocidade média: '))\n",
+        "\n",
+        "litros = (tempo * velocidade) / km_L\n",
+        "print(\"O número de litros de combustível gastos na viagem é:\", litros)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "l4rz6Ar8EixW",
+        "outputId": "2d1a18fe-666a-4c7c-8917-c21554d497eb"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Informe o tempo gasto na viagem em horas: 3\n",
+            "Informe a velocidade média: 75\n",
+            "O número de litros de combustível gastos na viagem é: 18.75\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "### 5 - Faça em Python um algoritmo que leia dois números inteiros (x e y), e calcule o quociente e o resto da divisão de x por y e escreva os resultados"
+      ],
+      "metadata": {
+        "id": "xe0tFtkxHAhc"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#var\n",
+        "n1 = 0\n",
+        "n2 = 0\n",
+        "quo = 0\n",
+        "mod = 0\n",
+        "\n",
+        "n1 = int(input('Informe o primeiro número: '))\n",
+        "n2 = int(input('Informe o segundo número: '))\n",
+        "quo = n1 / n2\n",
+        "mod = n1 % n2\n",
+        "print(\"O quociente da divisão entre\", n1, \"e\", n2, \"é\", quo)\n",
+        "print(\"O resto da divisão entre\", n1, \"e\", n2, \"é\", mod)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "kJEJpddyHgnc",
+        "outputId": "58ea5bb7-2391-409c-d335-2c208325aa26"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Informe o primeiro número: 7\n",
+            "Informe o segundo número: 4\n",
+            "O quociente da divisão entre 7 e 4 é 1.75\n",
+            "O resto da divisão entre 7 e 4 é 3\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "### 6 - Escreva em python um algoritmo que leia três números reais (a, b, c), e calcule a média aritmética. Após os cálculos, os resultados deverão ser escritos."
+      ],
+      "metadata": {
+        "id": "S3W_PNnzI_d0"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#var\n",
+        "n1 = 0\n",
+        "n2 = 0\n",
+        "n3 = 0\n",
+        "media = 0.0\n",
+        "\n",
+        "n1 = float(input('Informe o primeiro número: '))\n",
+        "n2 = float(input('Informe o segundo número: '))\n",
+        "n3 = float(input('Informe o terceiro número: '))\n",
+        "media = (n1 + n2 + n3) / 3\n",
+        "print(\"Os números informados foram:\", n1, \",\", n2, \"e\", n3,)\n",
+        "print(\"A média dos números é:\", media)\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "PwGvqITsJZJ-",
+        "outputId": "ec251673-a0d3-4700-b701-678546c5d8e9",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Informe o primeiro número: 5.4\n",
+            "Informe o segundo número: 6.5\n",
+            "Informe o terceiro número: 7\n",
+            "Os números informados foram: 5.4 , 6.5 e 7.0\n",
+            "A média dos números é: 6.3\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "### 7 - Uma loja de equipamentos de informática resolveu incentivar os seus funcionários a venderem no mês março. Para cada produto vendido, a loja dará uma bonificação de 1%, sobre o salário do funcionário. Desta forma, o funcionário que vender 10 produtos, terá um acréscimo de 10% em seu salário. Faça um algoritmo em Python que leia o código, o nome e o salário fixo do funcionário, além do número de produtos vendidos por ele no mês, e calcule o salário final do funcionário. Por fim, o algoritmo deve escrever o código e o nome do funcionário, juntamente com o seu salário final."
+      ],
+      "metadata": {
+        "id": "tByxG2zBg6_C"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "nome = input(\"Digite o nome do funcionário \\n\")\n",
+        "codigo = (input(\"Digite seu código \\n\"))\n",
+        "salario = float(input(\"Informe seu salário fixo \\n\"))\n",
+        "produtos = int(input(\"Informe quantos produtos ele vendeu no mês \\n\"))\n",
+        "\n",
+        "porcent = salario * (produtos * 0.01)\n",
+        "salario = salario + porcent\n",
+        "print(\"\\nCodigo:\", codigo)\n",
+        "print(nome)\n",
+        "print(\"salário final =\", round(salario, 2))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "3msyc2P4ys5o",
+        "outputId": "7bf4168d-ca65-4c8b-bbbe-65ea294d15dd"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Digite o nome do funcionário \n",
+            "Alexandre Viegas\n",
+            "Digite seu código \n",
+            "3393B\n",
+            "Informe seu salário fixo \n",
+            "1680\n",
+            "Informe quantos produtos ele vendeu no mês \n",
+            "11\n",
+            "\n",
+            "Codigo: 3393B\n",
+            "Alexandre Viegas\n",
+            "salário final = 1864.8\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "### 8 - Construa um algoritmo em Python que calcule a quantidade de latas de tintas necessárias e o custo para pintar tanques cilíndricos de combustível, onde são fornecidos a altura e o raio deste cilindro. Sabendo que:\n",
+        "### - ● a lata de tinta custa R$ 150,00\n",
+        "### - ● cada lata contém 5 litros;\n",
+        "### - ● cada litro de tinta pinta 3 metros quadrados;\n",
+        "### - ● a área do total cilindro é dada por área da base + área lateral;\n",
+        "### - ● a área da base do cilindro é dada π*raio 2\n",
+        "### - ● a área da lateral é 2*π*raio*altura.\n",
+        "### - ● Lembrando que π (pi) vale 3,14."
+      ],
+      "metadata": {
+        "id": "Wwlk4Lx13JoO"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Importações\n",
+        "import math\n",
+        "\n",
+        "# constantes\n",
+        "val_lata = 150.00 # R$\n",
+        "litros_lata = 5.0 # L\n",
+        "metro = 3.0 # m^2/L\n",
+        "pi = 3.14\n",
+        "\n",
+        "altura = float(input(\"Informe a altura do tanque (em metros): Ex: (12.5) \\n\"))\n",
+        "raio = float(input(\"Informe o raio do tanque (em metros): Ex: (7.5) \\n\"))\n",
+        "area_base = pi * (raio ** 2)\n",
+        "area_lateral = 2 * pi * raio * altura\n",
+        "volume_total = (area_base + area_lateral) / metro\n",
+        "numero_latas = math.ceil(volume_total / litros_lata)\n",
+        "custo_total = numero_latas * val_lata\n",
+        "\n",
+        "# ou\n",
+        "\n",
+        "# numero_latas = volume_total // litros_lata\n",
+        "# if volume_total % litros_lata > 0:\n",
+        "   # numero_latas += 1\n",
+        "# custo_total = numero_latas * val_lata\n",
+        "\n",
+        "\n",
+        "print(\"Quantidade de latas de tinta necessárias: \", numero_latas)\n",
+        "print(\"Custo total: R$\", round(custo_total, 2))"
+      ],
+      "metadata": {
+        "id": "uosB3NIj3xpT",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "6aa020ec-1955-4bac-a744-a54ca88421f8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Informe a altura do tanque (em metros): \n",
+            "10.5\n",
+            "Informe o raio do tanque (em metros): \n",
+            "2.5\n",
+            "Quantidade de latas de tinta necessárias:  13\n",
+            "Custo total: R$ 1950.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "### 9 - Elabore um algoritmo em Python para calcular e escrever o preço final de um computador, sendo fornecido o preço de fábrica. O preço final do computador é calculado com base nos adicionais 45 % de imposto e 28 % de revenda sobre o preço de fábrica."
+      ],
+      "metadata": {
+        "id": "wYGiGRbshRc1"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# var\n",
+        "preco_fabrica = 0.0\n",
+        "preco_final = 0.0\n",
+        "\n",
+        "# const\n",
+        "imposto = 0.45\n",
+        "revenda = 0.28\n",
+        "\n",
+        "preco_fabrica = float(input('Informe o preço de fábrica do computador: '))\n",
+        "preco_final = preco_fabrica * (1 + imposto + revenda)\n",
+        "print(\"O preço final do computador é:\", round(preco_final, 2))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "PJs8TbpqhdRq",
+        "outputId": "7c02ab50-cfcf-46e4-96bc-e6da187ef0e9"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Informe o preço de fábrica do computador: 2000.37\n",
+            "O preço final do computador é: 3460.64\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "### 10 - Uma revendedora de carros usados paga aos seus funcionários vendedores, um salário fixo por mês, mais uma comissão para cada carro vendido. Escreva um algoritmo em Python que leia o número do vendedor, o seu salário fixo, o número de carros por ele vendidos, e o valor que recebe por carro vendido, e calcule o salário mensal do vendedor, escrevendo-o juntamente com o seu número de identificação."
+      ],
+      "metadata": {
+        "id": "VltStnKpdLSp"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "nome = input(\"Digite o nome do vendedor: \")\n",
+        "codigo = (input(\"Digite seu código: \"))\n",
+        "salario = float(input(f\"Informe o salário fixo de {nome}: \"))\n",
+        "num_vend = int(input(f\"Informe o número de carros vendidos por {nome}: \"))\n",
+        "val_carro = float(input(f\"Informe o valor que {nome} recebe por carro vendido: \"))\n",
+        "\n",
+        "salario_final = salario + (num_vend * val_carro)\n",
+        "print(nome, codigo)\n",
+        "print(f\"salário final = R${round(salario_final, 2)}\")\n"
+      ],
+      "metadata": {
+        "id": "Fkv3-y1FkjJy",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "987ec06c-a6b3-4b2f-bd94-35b9811b9c05"
+      },
+      "execution_count": 12,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Digite o nome do vendedor: Paula Gomes\n",
+            "Digite seu código: 3348B\n",
+            "Informe o salário fixo de Paula Gomes: 1500\n",
+            "Informe o número de carros vendidos por Paula Gomes: 3\n",
+            "Informe o valor que Paula Gomes recebe por carro vendido: 2000\n",
+            "Paula Gomes 3348B\n",
+            "salário final = R$7500.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "### 11 - Uma empresa, para emitir a sua folha de pagamento mensal, trabalha com os seguintes dados:\n",
+        "\n",
+        "\n",
+        "```\n",
+        "Relativos ao Sistema de Pagamentos\n",
+        "Valor da Hora Normal = R$ 8,00\n",
+        "Valor da Hora Extra = R$ 9,50\n",
+        "Valor do Acréscimo por Dependente = RS 2,50# Isto está formatado como código\n",
+        "```\n",
+        "\n",
+        "\n",
+        "```\n",
+        "Relativos ao Sistema de Pagamentos\n",
+        "Valor da Hora Normal = R$ 8,00\n",
+        "Valor da Hora Extra = R$ 9,50\n",
+        "Valor do Acréscimo por Dependente = RS 2,50\n",
+        "Relativos a cada Funcionário\n",
+        "Número de Identificação\n",
+        "Nome\n",
+        "Número de horas normais trabalhadas\n",
+        "Número de horas extras trabalhadas\n",
+        "Número de dependentes\n",
+        "```\n",
+        "\n",
+        "O cálculo do salário de cada funcionário é feito em 3 etapas:\n",
+        "\n",
+        "\n",
+        "```\n",
+        "Etapa 1 : Cálculo do Salário Bruto\n",
+        "SALARIO BRUTO = Valor Total de Horas Normais + Valor Total de Horas Extras + Valor Total de Dependentes\n",
+        "Etapa 2 : Descontos\n",
+        "Todos os funcionários são isentos de imposto de renda, e descontam 5% do salário bruto para o INSS.\n",
+        "Etapa 3 : Salário Líquido\n",
+        "SALARIO LÍQUIDO = SALARIO BRUTO - DESCONTO\n",
+        "```\n",
+        "Escrever um algoritmo em Python que leia os dados referentes ao funcionário, calcule e escreva o salário líquido do funcionário da empresa. Obs.: Além do salário líquido, escreva o número de identificação e o nome do funcionário."
+      ],
+      "metadata": {
+        "id": "3DdBU2DBgcUU"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "VALOR_HORA_NORMAL = 8.00\n",
+        "VALOR_HORA_EXTRA = 9.50\n",
+        "VALOR_DEPENDENTE = 2.50\n",
+        "PERCENTUAL_INSS = 0.05\n",
+        "\n",
+        "# Entrada de dados do funcionário\n",
+        "numero_identificacao = (input(\"Número de Identificação: \"))\n",
+        "nome = input(\"Nome: \")\n",
+        "horas_normais = float(input(\"Número de horas normais trabalhadas: \"))\n",
+        "horas_extras = float(input(\"Número de horas extras trabalhadas: \"))\n",
+        "numero_dependentes = int(input(\"Número de dependentes: \"))\n",
+        "\n",
+        "# Cálculo do salário bruto\n",
+        "valor_total_horas_normais = horas_normais * VALOR_HORA_NORMAL\n",
+        "valor_total_horas_extras = horas_extras * VALOR_HORA_EXTRA\n",
+        "valor_total_dependentes = numero_dependentes * VALOR_DEPENDENTE\n",
+        "salario_bruto = valor_total_horas_normais + valor_total_horas_extras + valor_total_dependentes\n",
+        "\n",
+        "# Cálculo dos descontos\n",
+        "desconto_inss = salario_bruto * PERCENTUAL_INSS\n",
+        "\n",
+        "# Cálculo do salário líquido\n",
+        "salario_liquido = salario_bruto - desconto_inss\n",
+        "\n",
+        "# Saída dos resultados\n",
+        "print(\"\\n--- Resultados ---\")\n",
+        "print(\"Número de Identificação:\", numero_identificacao)\n",
+        "print(\"Nome:\", nome)\n",
+        "print(\"Salário Líquido: R$\", round(salario_liquido, 2))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "26TFery1ha-s",
+        "outputId": "784085bc-cfa9-496b-9721-b603f1a1bd66"
+      },
+      "execution_count": 17,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Número de Identificação: 7784\n",
+            "Nome: Douglas Machado\n",
+            "Número de horas normais trabalhadas: 80\n",
+            "Número de horas extras trabalhadas: 20\n",
+            "Número de dependentes: 3\n",
+            "\n",
+            "--- Resultados ---\n",
+            "Número de Identificação: 7784\n",
+            "Nome: Douglas Machado\n",
+            "Salário Líquido: R$ 795.62\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
