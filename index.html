@@ -1,43 +1,61 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meus Links de Mídia Social</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Davi Marszalek - Links</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
 </head>
 <body>
-    <div class="container">
-        <div class="profile-image-container">
-            <img class="profile-image" src="1740786831622.jpg" alt="Sua foto de perfil">
-        </div>
-        <h1>Davi Marszalek</h1>
-        <p>Estudante do curso de Análise e Desenvolvimento de Sistemas na IENH em Novo Hamburgo, RS</p>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/davimarszalek" target="_blank" class="social-button linkedin">
-                <img src="icons8-linkedin-48.png" alt="LinkedIn">
-                <span class="link-text">LinkedIn</span>
-            </a>
-            <a href="https://github.com/DaviMarszalek" target="_blank" class="social-button github">
-                <img src="icons8-github-48.png" alt="GitHub">
-                <span class="link-text">GitHub</span>
-            </a>
-            <a href="https://www.instagram.com/Davi_Marszalek" target="_blank" class="social-button instagram">
-                <img src="icons8-instagram-48.png" alt="Instagram">
-                <span class="link-text">Instagram</span>
-            </a>
-            <a href="https://t.me/Davi_Marszalek" target="_blank" class="social-button telegram">
-                <img src="icons8-aplicação-telegrama-48.png" alt="Telegram">
-                <span class="link-text">Telegram</span>
-            </a>
-            <a href="mailto:davi.c.m.rocha@gmail.com" target="_blank" class="social-button email">
-                <img src="icons8-nova-mensagem-80.png" alt="Email">
-                <span class="link-text">Email</span>
-            </a>
-        </div>
+  <div class="overlay"></div>
+
+  <button class="toggle-theme" aria-label="Alternar tema">🌓</button>
+
+  <main class="container">
+    <div class="profile-image-container">
+      <img class="profile-image" src="1740786831622.jpg" alt="Foto de Davi Marszalek" />
     </div>
+    <h1 class="fade-in">Davi Marszalek</h1>
+    <p class="fade-in">Estudante de Análise e Desenvolvimento de Sistemas na IENH - Novo Hamburgo, RS.</p>
+
+    <section class="social-links fade-in" aria-label="Links de redes sociais">
+      <a href="https://www.linkedin.com/in/davimarszalek" class="social-button linkedin" target="_blank" aria-label="LinkedIn de Davi Marszalek">
+        <img src="icons8-linkedin-48.png" alt="Ícone do LinkedIn" />
+        <span class="link-text">LinkedIn</span>
+      </a>
+      <a href="https://github.com/DaviMarszalek" class="social-button github" target="_blank" aria-label="GitHub de Davi Marszalek">
+        <img src="icons8-github-48.png" alt="Ícone do GitHub" />
+        <span class="link-text">GitHub</span>
+      </a>
+      <a href="https://www.instagram.com/Davi_Marszalek" class="social-button instagram" target="_blank" aria-label="Instagram de Davi Marszalek">
+        <img src="icons8-instagram-48.png" alt="Ícone do Instagram" />
+        <span class="link-text">Instagram</span>
+      </a>
+      <a href="https://t.me/Davi_Marszalek" class="social-button telegram" target="_blank" aria-label="Telegram de Davi Marszalek">
+        <img src="icons8-aplicação-telegrama-48.png" alt="Ícone do Telegram" />
+        <span class="link-text">Telegram</span>
+      </a>
+      <a href="mailto:davi.c.m.rocha@gmail.com" class="social-button email" target="_blank" aria-label="E-mail para Davi Marszalek">
+        <img src="icons8-nova-mensagem-80.png" alt="Ícone de E-mail" />
+        <span class="link-text">Email</span>
+      </a> 
+    </section>
+
+    <section class="contact-form fade-in">
+      <h2>Entre em contato</h2>
+      <form action="https://formspree.io/f/SEU_ID" method="POST">
+        <input type="text" name="nome" placeholder="Seu nome" required />
+        <input type="email" name="email" placeholder="Seu e-mail" required />
+        <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
