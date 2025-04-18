@@ -1,254 +1,265 @@
-/* Definindo as variáveis de cores para o modo claro e escuro */
 :root {
-    --bg-color: #000;
-    --text-color: #fff;
-    --card-bg: rgba(0, 0, 0, 0.8);
-    --button-bg: #4361ee;
-    --button-text: #fff;
-    --input-bg: #eee;
-    --input-border: #ddd;
-    --button-hover-bg: #80ed99;
-  }
-  
-  body.light {
-    --bg-color: #f0f0f0;
-    --text-color: #111;
-    --card-bg: #ffffff;
-    --button-bg: #80ed99;
-    --button-text: #000;
-    --input-bg: #fff;
-    --input-border: #ccc;
-    --button-hover-bg: #4361ee;
-  }
-  
-  body {
-    background: var(--bg-color);
-    color: var(--text-color);
-    font-family: 'Inter', sans-serif;
-    height: 100vh;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    transition: background 0.5s ease, color 0.5s ease;
-  }
-  
-  /* Estilo para a sobreposição (layer) que escurece o fundo */
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: -1;
-  }
-  
-  /* Estilo do botão de alternância de tema (modo claro/escuro) */
-  .toggle-theme {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: var(--button-bg);
-    color: var(--button-text);
-    border: none;
-    padding: 10px 15px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 20px;
-    z-index: 10;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-  }
-  
-  /* Container principal com a foto de perfil e links */
+  --bg-color: #000;
+  --text-color: #fff;
+  --card-bg: rgba(0, 0, 0, 0.8);
+  --button-bg: #4361ee;
+  --button-text: #fff;
+  --input-bg: #eee;
+  --input-border: #ddd;
+  --button-hover-bg: #80ed99;
+}
+
+body.light {
+  --bg-color: #f0f0f0;
+  --text-color: #111;
+  --card-bg: #ffffff;
+  --button-bg: #80ed99;
+  --button-text: #000;
+  --input-bg: #fff;
+  --input-border: #ccc;
+  --button-hover-bg: #4361ee;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('sua-imagem.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+.toggle-theme {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.container {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 25px;
+  max-width: 95%;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1;
+}
+
+.profile-image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.profile-image {
+  width: 100%;
+  max-width: 180px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.05);
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--button-bg);
+  padding: 12px 25px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--button-text);
+  font-weight: 600;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.social-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.social-button img {
+  width: 28px;
+  height: 28px;
+}
+
+.linkedin:hover {
+  background: linear-gradient(135deg, #0077b5, #005582);
+}
+
+.github:hover {
+  background: linear-gradient(135deg, #333, #222);
+}
+
+.instagram:hover {
+  background: linear-gradient(135deg, #e1306c, #c13584);
+}
+
+.telegram:hover {
+  background: linear-gradient(135deg, #229ED9, #1b8dbb);
+}
+
+.email:hover {
+  background: linear-gradient(135deg, #b8b8b8, #9b9999);
+  color: #000;
+}
+
+.contact-form {
+  margin-top: 40px;
+  text-align: left;
+  padding: 20px;
+  background: var(--card-bg);
+  border-radius: 10px;
+}
+
+.contact-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  background: var(--input-bg);
+  color: #111;
+  border: 1px solid var(--input-border);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.contact-form button {
+  padding: 12px;
+  border: none;
+  background: var(--button-bg);
+  color: var(--button-text);
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: var(--button-hover-bg);
+}
+
+@media (max-width: 767px) {
   .container {
-    background-color: var(--card-bg);
-    border-radius: 12px;
-    padding: 25px;
-    max-width: 95%;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    position: relative;
-    z-index: 1;
-  }
-  
-  /* Imagem do perfil circular */
-  .profile-image-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-  
-  .profile-image {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
-  }
-  
-  /* Efeito de aumento na imagem ao passar o mouse */
-  .profile-image:hover {
-    transform: scale(1.05);
-  }
-  
-  /* Estilo para o título e a descrição */
-  h1 {
-    font-size: 28px;
-    margin-bottom: 10px;
-  }
-  
-  p {
-    font-size: 18px;
-    margin-bottom: 25px;
-    color: rgba(255, 255, 255, 0.85);
-  }
-  
-  /* Animação de fade-in */
-  .fade-in {
-    animation: fadeIn 1.5s ease-in forwards;
-    opacity: 0;
-  }
-  
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Estilos para os links das redes sociais */
-  .social-links {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .social-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background: var(--button-bg);
-    padding: 12px 25px;
-    border-radius: 10px;
-    text-decoration: none;
-    color: var(--button-text);
-    font-weight: 600;
-    font-size: 18px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Efeito de hover nos links de redes sociais */
-  .social-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  }
-  
-  /* Estilos para os ícones */
-  .social-button img {
-    width: 28px;
-    height: 28px;
-  }
-  
-  /* Efeitos de hover por plataforma (cores específicas) */
-  .linkedin:hover {
-    background: linear-gradient(135deg, #0077b5, #005582);
-  }
-  
-  .github:hover {
-    background: linear-gradient(135deg, #333, #222);
-  }
-  
-  .instagram:hover {
-    background: linear-gradient(135deg, #e1306c, #c13584);
-  }
-  
-  .telegram:hover {
-    background: linear-gradient(135deg, #229ED9, #1b8dbb);
-  }
-  
-  .email:hover {
-    background: linear-gradient(135deg, #b8b8b8, #9b9999);
-    color: #000;
-  }
-  
-  /* Estilo para o formulário de contato */
-  .contact-form {
-    margin-top: 40px;
-    text-align: left;
     padding: 20px;
-    background: var(--card-bg);
-    border-radius: 10px;
   }
-  
-  .contact-form h2 {
-    text-align: center;
-    margin-bottom: 20px;
+
+  h1 {
+    font-size: 22px;
   }
-  
-  .contact-form form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .contact-form input,
-  .contact-form textarea {
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
+
+  p {
     font-size: 16px;
-    background: var(--input-bg);
-    color: #111;
-    border: 1px solid var(--input-border);
   }
-  
-  .contact-form textarea {
-    resize: vertical;
-    min-height: 100px;
+
+  .social-button {
+    font-size: 16px;
+    padding: 10px 15px;
   }
-  
-  .contact-form button {
-    padding: 12px;
-    border: none;
-    background: var(--button-bg);
-    color: var(--button-text);
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s ease;
+
+  .social-button img {
+    width: 24px;
+    height: 24px;
   }
-  
-  /* Efeito de hover no botão de envio */
-  .contact-form button:hover {
-    background: var(--button-hover-bg);
+
+  .contact-form {
+    padding: 15px;
   }
-  
-  /* Media query para dispositivos com telas maiores */
-  @media (min-width: 768px) {
-    .container {
-      width: 800px;
-      padding: 35px;
-    }
-  
-    .social-links {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-  
-    .social-button {
-      padding: 10px 20px;
-      margin: 8px;
-    }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 800px;
+    padding: 35px;
   }
-  
+
+  .social-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .social-button {
+    padding: 10px 20px;
+    margin: 8px;
+  }
+}
